@@ -1,0 +1,251 @@
+/*------------------!--------------------EXPERIENCE SECTION STYLES------------------------!--------------*/
+#experience-section {
+    padding: 60px 0;
+
+    .section-heading {
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        width: 70%;
+    }
+
+    .single-experience-details {
+        margin-bottom: 29px;
+    }
+
+    .experience-span {
+        font-family: $font-2;
+        font-weight: 600;
+        color: $color-4;
+    }
+
+    .first-experience {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            background: url(../img/experience/stroke-1.png);
+            width: 16px;
+            height: 16px;
+            top: 6px;
+            left: -55px;
+            background-repeat: no-repeat;
+        }
+
+        &::after {
+            content: "";
+            background: #2605c8;
+            position: absolute;
+            left: -48px;
+            top: 20px;
+            height: 113%;
+            width: 3px;
+        }
+    }
+
+    .second-experience {
+        position: relative;
+        text-align: right;
+
+        &::before {
+            content: "";
+            position: absolute;
+            background: url(../img/experience/stroke-1.png);
+            width: 16px;
+            height: 16px;
+            top: 6px;
+            right: -58px;
+            background-repeat: no-repeat;
+        }
+
+        .right-stroke {
+            background: #2605c8;
+            position: absolute;
+            right: -51px;
+            top: 20px;
+            height: 112%;
+            width: 3px;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            background: url(../img/experience/stroke-1.png);
+            width: 16px;
+            height: 16px;
+            bottom: -48px;
+            right: -58px;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+@include xl {
+    #experience-section {
+        .first-experience {
+            &::before {
+                left: -50px;
+            }
+            &::after {
+                left: -43px;
+            }
+        }
+
+        .second-experience {
+            &::before,
+            &::after {
+                right: -52px;
+            }
+
+            .right-stroke {
+                right: -46px;
+            }
+        }
+    }
+}
+
+@include lg {
+    #experience-section {
+        .first-experience {
+            &::before {
+                left: -45px;
+            }
+            &::after {
+                left: -38px;
+            }
+        }
+
+        .second-experience {
+            &::before,
+            &::after {
+                right: -48px;
+            }
+
+            .right-stroke {
+                right: -41px;
+            }
+        }
+    }
+}
+
+@include md {
+    #experience-section {
+        .section-heading {
+            width: 80%;
+            margin-bottom: 30px;
+            h2 {
+                font-size: 35px;
+                line-height: 45px;
+            }
+        }
+
+        .first-experience {
+            &::before {
+                left: -37px;
+            }
+            &::after {
+                left: -31px;
+            }
+        }
+
+        .second-experience {
+            &::before,
+            &::after {
+                right: -40px;
+            }
+
+            .right-stroke {
+                right: -34px;
+            }
+        }
+    }
+}
+
+@include sm {
+    #experience-section {
+        padding: 30px 0;
+        .section-heading {
+            width: 90%;
+            h2 {
+                font-size: 30px;
+                line-height: 40px;
+            }
+        }
+
+        .single-experience-details {
+            margin-bottom: 40px;
+        }
+
+        .first-experience {
+            &::before,
+            &::after {
+                display: none;
+            }
+        }
+
+        .second-experience {
+            &::before,
+            &::after {
+                display: none;
+            }
+
+            .right-stroke {
+                display: none;
+            }
+        }
+    }
+}
+
+@include xs {
+    #experience-section {
+        .single-experience-details {
+            // text-align: center;
+        }
+
+        .single-experience-duration {
+            // text-align: center;
+            margin-bottom: 15px;
+
+            h3 {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@include xxs {
+    #experience-section {
+        .section-heading {
+            width: 100%;
+        }
+
+        .single-experience-details {
+            text-align: center;
+            h3 {
+                font-size: 15px;
+                line-height: 25px;
+            }
+        }
+
+        .single-experience-duration {
+            text-align: center;
+            h3 {
+                font-size: 18px;
+                line-height: 28px;
+            }
+        }
+
+        .col-xxs {
+            width: 100%;
+        }
+
+        .order-xxs-3 {
+            order: 3;
+        }
+
+        .order-xxs-4 {
+            order: 4;
+        }
+    }
+}

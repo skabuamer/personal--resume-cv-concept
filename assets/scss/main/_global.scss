@@ -1,0 +1,91 @@
+/*------------------!--------------------GLOBAL STYLES------------------------!--------------*/
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+    color: inherit;
+}
+
+a {
+    transition: all 0.4s ease;
+    text-decoration: none;
+    font-family: $font-2;
+}
+
+a:hover {
+    color: $white;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button:focus,
+button:hover {
+    outline: none;
+}
+
+a:hover,
+a:focus,
+a:visited {
+    outline: none;
+}
+
+.btn-custom {
+    display: inline-block;
+    color: $white;
+    font-family: $font-2;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 50px;
+    height: 50px;
+    padding: 0px 40px;
+    border-radius: 10px;
+    text-transform: capitalize;
+    position: relative;
+    @include gradient-x;
+    z-index: 1;
+
+    &:hover {
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    &::before {
+        transition: all 0.4s ease;
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        @include gradient-x-reverse;
+        border-radius: 10px;
+        z-index: -1;
+        opacity: 0;
+    }
+}
+
+.section-heading {
+    @include xl {
+        width: 70%;
+    }
+}
+.blue-txt {
+    color: $main-color;
+}
+
+.section-heading h2 {
+    text-transform: capitalize;
+}
+
+.section-heading p {
+    font-family: $font-2;
+}

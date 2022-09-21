@@ -1,0 +1,53 @@
+/*------------------!--------------------Typography------------------------!--------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&family=Nunito:wght@400;600&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $main-font;
+    font-weight: 700;
+    color: $black;
+}
+
+h1 {
+    font-size: 70px;
+    line-height: 85px;
+}
+
+h2 {
+    font-size: 40px;
+    line-height: 55px;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+h4 {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+h5 {
+    font-size: 16px;
+    line-height: 26px;
+}
+
+h6 {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+p {
+    font-family: $font-2;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: $color-4;
+    margin-bottom: 10px;
+}

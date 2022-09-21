@@ -1,0 +1,58 @@
+/*------------------!--------------------FOOTER SECTION STYLES------------------------!--------------*/
+footer {
+    padding: 100px 0;
+    @include gradient-x;
+    text-align: center;
+
+    .socials {
+        margin-bottom: 36px;
+        i {
+            color: $white;
+            background: #ffffff17;
+            border-radius: 50%;
+            width: 40px;
+            padding: 12px 0;
+        }
+    }
+    .copyright {
+        color: $white;
+        font-family: $font-2;
+    }
+}
+
+@include xl {
+    footer {
+    }
+}
+
+@include lg {
+    footer {
+    }
+}
+
+@include md {
+    footer {
+        padding: 70px 0;
+    }
+}
+
+@include sm {
+    footer {
+    }
+}
+
+@include xs {
+    footer {
+        padding: 50px 0;
+    }
+}
+
+@include xxs {
+    footer {
+        padding: 35px 0;
+
+        .socials {
+            margin-bottom: 25px;
+        }
+    }
+}

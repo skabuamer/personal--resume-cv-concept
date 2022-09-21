@@ -1,0 +1,133 @@
+/*------------------!--------------------PORTFOLIO SECTION STYLES------------------------!--------------*/
+#portfolio-section {
+    padding: 60px 0 30px;
+
+    .section-heading {
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 50px;
+        width: 70%;
+    }
+
+    .single-portfolio {
+        margin-bottom: 30px;
+        text-align: center;
+        position: relative;
+
+        img {
+            border-radius: 10px;
+            max-width: 100%;
+            min-width: 100%;
+            position: relative;
+        }
+        .portfolio-1st-row {
+            min-width: fit-content;
+        }
+
+        .portfolio-img-container {
+            position: relative;
+            width: fit-content;
+
+            &:hover {
+                &::before {
+                    opacity: 1;
+                }
+
+                h3 {
+                    opacity: 1;
+                }
+            }
+
+            &::before {
+                position: absolute;
+                content: "";
+                background: linear-gradient(360deg, #2c2c2c, transparent);
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                z-index: 2;
+                border-radius: 10px;
+                transition: all 0.4s ease;
+            }
+
+            h3 {
+                position: absolute;
+                left: 30px;
+                bottom: 30px;
+                z-index: 3;
+                color: $white;
+                opacity: 0;
+                transition: all 0.4s ease;
+            }
+        }
+    }
+}
+
+@include xl {
+    #portfolio-section {
+    }
+}
+
+@include lg {
+    #portfolio-section {
+    }
+}
+
+@include md {
+    #portfolio-section {
+        .section-heading {
+            width: 80%;
+            h2 {
+                font-size: 35px;
+                line-height: 45px;
+            }
+        }
+        .single-portfolio {
+            .portfolio-1st-row {
+                min-width: 100%;
+            }
+        }
+    }
+}
+
+@include sm {
+    #portfolio-section {
+        padding: 30px 0;
+
+        .section-heading {
+            h2 {
+                font-size: 30px;
+                line-height: 40px;
+            }
+        }
+    }
+}
+
+@include xs {
+    #portfolio-section {
+        .section-heading {
+            width: 90%;
+        }
+    }
+}
+
+@include xxs {
+    #portfolio-section {
+        .section-heading {
+            width: 100%;
+        }
+
+        .single-portfolio {
+            margin: 0 auto;
+            margin-bottom: 25px;
+            width: 90%;
+        }
+        .col-xxs-12 {
+            width: 100%;
+        }
+    }
+}

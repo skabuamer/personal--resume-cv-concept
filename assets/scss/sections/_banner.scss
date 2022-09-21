@@ -1,0 +1,148 @@
+/*------------------!--------------------BANNER STYLES------------------------!--------------*/
+#banner-section {
+    background: url(../img/bg/banner-bg.png) no-repeat bottom center;
+    background-size: cover;
+    padding: 70px 0 230px;
+
+    .banner-txt {
+        color: $white;
+
+        h1 {
+            text-transform: capitalize;
+            color: $white;
+            margin-bottom: 0;
+        }
+
+        span {
+            display: block;
+            text-transform: capitalize;
+            font-family: $font-2;
+            font-weight: 600;
+            font-size: 25px;
+
+            &.banner-subtitle {
+                margin-bottom: 23px;
+            }
+
+            &.profession {
+                margin-top: 5px;
+                margin-bottom: 40px;
+            }
+        }
+
+        .btn-custom {
+            background: $white;
+            color: $black;
+
+            i {
+                margin-right: 20px;
+            }
+        }
+    }
+}
+
+@include xl {
+    #banner-section {
+    }
+}
+
+@include lg {
+    #banner-section {
+    }
+}
+
+@include md {
+    #banner-section {
+        padding: 50px 0 150px;
+        .banner-txt {
+            h1 {
+                font-size: 50px;
+                line-height: 65px;
+            }
+
+            span {
+                font-size: 20px;
+
+                &.banner-subtitle {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+}
+
+@include sm {
+    #banner-section {
+        .banner-txt {
+            h1 {
+                font-size: 45px;
+                line-height: 60px;
+            }
+
+            span {
+                font-size: 18px;
+
+                &.banner-subtitle {
+                    margin-bottom: 10px;
+                }
+            }
+
+            .btn-custom {
+                font-size: 16px;
+                padding: 0 25px;
+
+                i {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}
+
+@include xs {
+    #banner-section {
+        background-position-x: right;
+        padding: 40px 0 90px;
+
+        .banner-img {
+            text-align: center;
+            img {
+                width: 60%;
+                margin-bottom: 40px;
+            }
+        }
+
+        .banner-txt {
+            margin-left: 20px;
+
+            h1 {
+                font-size: 40px;
+                line-height: 55px;
+            }
+        }
+    }
+}
+
+@include xxs {
+    #banner-section {
+        padding-bottom: 60px;
+        .banner-img {
+            img {
+                margin-bottom: 20px;
+            }
+        }
+
+        .banner-txt {
+            .btn-custom {
+                font-size: 14px;
+                padding: 0 15px;
+                height: 40px;
+                line-height: 42px;
+
+                i {
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}

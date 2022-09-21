@@ -1,0 +1,139 @@
+/*------------------!--------------------TESTIMONIAL SECTION STYLES------------------------!--------------*/
+#testimonial-section {
+    padding: 60px 0;
+    overflow: hidden;
+    position: relative;
+
+    .section-heading {
+        margin: 0 auto;
+        margin-bottom: 41px;
+        width: 70%;
+        text-align: center;
+    }
+
+    .slider-controls {
+        position: relative;
+        z-index: 99;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button {
+            border: 0;
+            background-color: $white;
+            box-shadow: 0px 0px 20px #0000000d;
+            border-radius: 50%;
+            color: $color-2;
+            height: 60px;
+            padding: 0px 17px;
+            transition: all 0.4s ease;
+            margin-right: 20px;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            &:hover {
+                color: $color-4;
+            }
+
+            i {
+                font-size: 25px;
+                line-height: 60px;
+            }
+        }
+    }
+
+    .single-testimonial {
+        text-align: center;
+        background-color: $white;
+        box-shadow: 0px 0px 20px #0000000d;
+        padding: 30px 20px;
+        border-radius: 5px;
+
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 26px;
+        }
+
+        h3 {
+            margin-bottom: 4px;
+        }
+
+        .role {
+            margin-bottom: 20px;
+            display: block;
+            font-family: $font-2;
+            color: $color-4;
+            font-weight: 600;
+        }
+    }
+
+    .tns-inner {
+        clip-path: inset(-1vw -100vw -1vw -1vw);
+    }
+
+    .tns-ovh {
+        overflow: visible;
+    }
+}
+
+@include md {
+    #testimonial-section {
+        .section-heading {
+            h2 {
+                font-size: 35px;
+                line-height: 45px;
+            }
+        }
+
+        .slider-controls {
+            margin-bottom: 30px;
+        }
+
+        .bg-custom {
+            display: none;
+        }
+    }
+}
+
+@include sm {
+    #testimonial-section {
+        padding: 30px 0;
+        .section-heading {
+            width: 80%;
+
+            h2 {
+                font-size: 30px;
+                line-height: 40px;
+            }
+        }
+        .single-testimonial {
+            border-radius: 15px;
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+}
+
+@include xs {
+    #testimonial-section {
+        .section-heading {
+            width: 90%;
+        }
+    }
+}
+
+@include xxs {
+    #testimonial-section {
+        .section-heading {
+            width: 100%;
+        }
+
+        .single-testimonial {
+            width: 100%;
+        }
+    }
+}

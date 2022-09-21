@@ -1,0 +1,42 @@
+/* 
+
+Master Stylesheet
+----------------------
+
+Template Name : 
+Description : 
+Author Name : Shaikh Abu Amer
+Author URL : 
+Version : 1.0
+
+
+Table of Content
+-----------------------
+
+1. Typography 
+2. Navigation 
+3.
+4.
+5.
+6.
+
+
+*/
+
+@import "./main/breakpoints";
+@import "./main/variables";
+@import "./main/mixins";
+@import "./main/normalize";
+@import "./main/typography";
+@import "./main/global";
+
+@import "./sections/header";
+@import "./sections/banner";
+@import "./sections/about";
+@import "./sections/service";
+@import "./sections/skill";
+@import "./sections/experience";
+@import "./sections/portfolio";
+@import "./sections/testimonial";
+@import "./sections/contact";
+@import "./sections/footer";

@@ -1,0 +1,106 @@
+/*------------------!--------------------HEADER STYLES------------------------!--------------*/
+header {
+    background: url(../img/bg/banner-bg.png) no-repeat;
+    background-position: top center;
+    background-size: cover;
+    padding: 48px 0;
+
+    .nav-item {
+        margin-left: 50px;
+
+        a {
+            color: $white;
+            border-bottom: 3px solid transparent;
+            padding-bottom: 8px;
+            &:hover {
+                border-bottom: 3px solid $color-3;
+            }
+        }
+    }
+}
+
+@include xl {
+    header {
+    }
+}
+
+@include lg {
+    header {
+    }
+}
+
+@include md {
+    header {
+        padding: 20px 0;
+
+        .nav-item {
+            margin-left: 0;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .btn:hover {
+            background: $white;
+        }
+
+        button:focus:not(:focus-visible) {
+            background-color: $white;
+        }
+
+        .btn-custom {
+            padding: 0px 20px;
+            border: 0;
+            line-height: 58px;
+            background: $white;
+
+            &::before {
+                display: none;
+            }
+
+            i {
+                color: $main-color;
+                font-size: 25px;
+            }
+        }
+
+        .offcanvas.offcanvas-start {
+            background-color: $color-2;
+            width: 45%;
+        }
+    }
+}
+
+@include sm {
+    header {
+        .offcanvas.offcanvas-start {
+            width: 55%;
+        }
+    }
+}
+
+@include xs {
+    header {
+        background-size: unset;
+        background-position-x: right;
+        .offcanvas.offcanvas-start {
+            width: 65%;
+        }
+    }
+}
+
+@include xxs {
+    header {
+        .offcanvas.offcanvas-start {
+            width: 100%;
+        }
+
+        .btn-custom {
+            height: 40px;
+            padding: 0 15px;
+            line-height: 45px;
+            i {
+                font-size: 20px;
+            }
+        }
+    }
+}

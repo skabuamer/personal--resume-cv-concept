@@ -1,0 +1,11 @@
+@mixin gradient-x {
+    background-image: linear-gradient(to right, $color-2, $color-3);
+}
+
+@mixin gradient-x-reverse {
+    background-image: linear-gradient(to left, $color-2, $color-3);
+}
+
+@mixin gradient-y {
+    background-image: linear-gradient(to bottom, $color-3, $color-2);
+}

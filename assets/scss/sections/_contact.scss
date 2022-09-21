@@ -1,0 +1,251 @@
+/*------------------!--------------------CONTACT SECTION STYLES------------------------!--------------*/
+#contact-section {
+    padding: 60px 0 120px;
+
+    .section-heading {
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 45px;
+        width: 70%;
+    }
+
+    .contact-info {
+        .single-contact-info {
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+
+            i {
+                text-align: center;
+                color: $white;
+                background-color: $black;
+                width: 70px;
+                padding: 20px 0px;
+                font-size: 30px;
+                border-radius: 5px;
+                margin-right: 30px;
+            }
+
+            span {
+                display: block;
+
+                &.info-title {
+                    text-transform: capitalize;
+                    color: $black;
+                    font-weight: 700;
+                    font-size: 20px;
+                }
+
+                &.info-subtitle {
+                    color: $color-4;
+                    font-family: $font-2;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .contact-form {
+        input {
+            border: 0;
+            background-color: #f8f8f8;
+            padding: 25px 30px;
+            border-radius: 5px;
+            font-family: $font-2;
+
+            &#name,
+            &#email {
+                width: 412px;
+            }
+
+            &#name {
+                margin-right: 27px;
+            }
+
+            &#subject {
+                width: 100%;
+                border: 0;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+        }
+
+        textarea {
+            width: 100%;
+            border: 0;
+            background-color: #f8f8f8;
+            padding: 25px 30px;
+            font-family: $font-2;
+            margin-bottom: 42px;
+        }
+
+        button {
+            border: 0;
+        }
+    }
+}
+
+@include xl {
+    #contact-section {
+        .contact-form {
+            input {
+                &#name,
+                &#email {
+                    width: 352px;
+                }
+            }
+        }
+    }
+}
+
+@include lg {
+    #contact-section {
+        .contact-form {
+            input {
+                padding: 15px;
+                &#name,
+                &#email {
+                    width: 298px;
+                }
+
+                &#name {
+                    margin-right: 15px;
+                }
+            }
+
+            textarea {
+                padding: 15px;
+            }
+        }
+    }
+}
+
+@include md {
+    #contact-section {
+        .section-heading {
+            h2 {
+                font-size: 35px;
+                line-height: 45px;
+            }
+        }
+
+        .contact-form {
+            input {
+                &#name,
+                &#email {
+                    width: 338px;
+                }
+            }
+        }
+    }
+}
+
+@include sm {
+    #contact-section {
+        padding: 30px 0 60px;
+
+        .section-heading {
+            width: 80%;
+
+            h2 {
+                font-size: 30px;
+                line-height: 40px;
+            }
+        }
+
+        .contact-form {
+            input {
+                &#name,
+                &#email {
+                    margin-bottom: 20px;
+                    width: 100%;
+                }
+
+                &#name {
+                    margin-right: 0;
+                }
+
+                &#subject {
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                }
+            }
+
+            button {
+                font-size: 16px;
+                padding: 0 25px;
+            }
+        }
+    }
+}
+
+@include xs {
+    #contact-section {
+        .section-heading {
+            width: 90%;
+        }
+
+        .contact-info {
+            .single-contact-info {
+                i {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+}
+
+@include xxs {
+    #contact-section {
+        .section-heading {
+            width: 100%;
+        }
+
+        .contact-info {
+            .single-contact-info {
+                i {
+                    width: 50px;
+                    padding: 15px 0;
+                    font-size: 20px;
+                }
+
+                span {
+                    &.info-title {
+                        font-size: 15px;
+                    }
+
+                    &.info-subtitle {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        .contact-form {
+            input {
+                padding: 10px;
+                font-size: 15px;
+
+                &#name,
+                &#email {
+                    margin-bottom: 15px;
+                }
+
+                &#subject {
+                    margin-bottom: 15px;
+                }
+            }
+            textarea {
+                padding: 10px;
+                font-size: 15px;
+            }
+
+            button {
+                font-size: 14px;
+                padding: 0 15px;
+                height: 40px;
+                line-height: 42px;
+            }
+        }
+    }
+}
