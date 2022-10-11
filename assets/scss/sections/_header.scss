@@ -1,22 +1,31 @@
 /*------------------!--------------------HEADER STYLES------------------------!--------------*/
 header {
-    background: url(../img/bg/banner-bg.png) no-repeat;
-    background-position: top center;
-    background-size: cover;
-    padding: 48px 0;
+    background: linear-gradient(90deg, #517ae4, #342ad1);
+    padding: 30px 0;
+    transition: all 0.6s ease;
+}
 
-    .nav-item {
-        margin-left: 50px;
+.nav-item {
+    margin-left: 50px;
 
-        a {
-            color: $white;
-            border-bottom: 3px solid transparent;
-            padding-bottom: 8px;
-            &:hover {
-                border-bottom: 3px solid $color-3;
-            }
+    a {
+        color: $white;
+        border-bottom: 3px solid transparent;
+        padding-bottom: 8px;
+        &:hover {
+            border-bottom: 3px solid $color-3;
         }
     }
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 111;
+    box-shadow: 0 3px 20px rgb(0, 0, 0, 0.2);
+    transition: all 0.6s ease;
+    padding: 30px 0;
 }
 
 @include xl {
@@ -32,12 +41,6 @@ header {
 @include md {
     header {
         padding: 20px 0;
-
-        .nav-item {
-            margin-left: 0;
-            margin-bottom: 20px;
-            text-align: left;
-        }
 
         .btn:hover {
             background: $white;
@@ -68,6 +71,12 @@ header {
             width: 45%;
         }
     }
+
+    .nav-item {
+        margin-left: 0;
+        margin-bottom: 20px;
+        text-align: left;
+    }
 }
 
 @include sm {
@@ -85,6 +94,10 @@ header {
         .offcanvas.offcanvas-start {
             width: 65%;
         }
+    }
+
+    .sticky {
+        padding: 20px 0;
     }
 }
 

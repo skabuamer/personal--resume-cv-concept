@@ -26,6 +26,17 @@ Table of Content
 html {
   overflow-x: hidden;
   scroll-behavior: smooth;
+  scroll-padding-top: 87px;
+}
+@media screen and (max-width: 991px) {
+  html {
+    scroll-padding-top: 50px;
+  }
+}
+@media screen and (max-width: 575px) {
+  html {
+    scroll-padding-top: 55px;
+  }
 }
 
 body {
@@ -178,33 +189,71 @@ a:visited {
   font-family: "Nunito", sans-serif;
 }
 
+.back__to__top {
+  color: #fff;
+  background-color: #2605c8;
+  height: 65px;
+  width: 55px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.18);
+  font-size: 20px;
+  line-height: 70px;
+  text-align: center;
+  bottom: 15px;
+  right: 20px;
+  border-radius: 4px;
+  position: fixed;
+  cursor: pointer;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.2s ease;
+  z-index: 111;
+}
+.back__to__top:hover {
+  background-color: #fff;
+  color: #2605c8;
+}
+
+.back__to__top.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back__to__top.active__override {
+  opacity: 0;
+}
+
 /*------------------!--------------------HEADER STYLES------------------------!--------------*/
 header {
-  background: url(../img/bg/banner-bg.png) no-repeat;
-  background-position: top center;
-  background-size: cover;
-  padding: 48px 0;
+  background: linear-gradient(90deg, #517ae4, #342ad1);
+  padding: 30px 0;
+  transition: all 0.6s ease;
 }
-header .nav-item {
+
+.nav-item {
   margin-left: 50px;
 }
-header .nav-item a {
+.nav-item a {
   color: #fff;
   border-bottom: 3px solid transparent;
   padding-bottom: 8px;
 }
-header .nav-item a:hover {
+.nav-item a:hover {
   border-bottom: 3px solid #5685e7;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 111;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.6s ease;
+  padding: 30px 0;
 }
 
 @media screen and (max-width: 991px) {
   header {
     padding: 20px 0;
-  }
-  header .nav-item {
-    margin-left: 0;
-    margin-bottom: 20px;
-    text-align: left;
   }
   header .btn:hover {
     background: #fff;
@@ -229,6 +278,11 @@ header .nav-item a:hover {
     background-color: #2f1ece;
     width: 45%;
   }
+  .nav-item {
+    margin-left: 0;
+    margin-bottom: 20px;
+    text-align: left;
+  }
 }
 @media screen and (max-width: 767px) {
   header .offcanvas.offcanvas-start {
@@ -242,6 +296,9 @@ header .nav-item a:hover {
   }
   header .offcanvas.offcanvas-start {
     width: 65%;
+  }
+  .sticky {
+    padding: 20px 0;
   }
 }
 @media screen and (max-width: 479px) {
@@ -259,40 +316,53 @@ header .nav-item a:hover {
 }
 /*------------------!--------------------BANNER STYLES------------------------!--------------*/
 #banner-section {
-  background: url(../img/bg/banner-bg.png) no-repeat bottom center;
+  background: url(../img/bg/banner-bg.png) no-repeat;
+  background-position: bottom right;
   background-size: cover;
   padding: 70px 0 230px;
+  position: relative;
+  overflow: hidden;
 }
-#banner-section .banner-txt {
+
+.banner-txt {
   color: #fff;
 }
-#banner-section .banner-txt h1 {
+.banner-txt h1 {
   text-transform: capitalize;
   color: #fff;
   margin-bottom: 0;
 }
-#banner-section .banner-txt span {
+.banner-txt span {
   display: block;
   text-transform: capitalize;
   font-family: "Nunito", sans-serif;
   font-weight: 600;
   font-size: 25px;
 }
-#banner-section .banner-txt span.banner-subtitle {
+.banner-txt span.banner-subtitle {
   margin-bottom: 23px;
 }
-#banner-section .banner-txt span.profession {
+.banner-txt span.profession {
   margin-top: 5px;
   margin-bottom: 40px;
 }
-#banner-section .banner-txt .btn-custom {
+.banner-txt .btn-custom {
   background: #fff;
   color: #000;
 }
-#banner-section .banner-txt .btn-custom i {
+.banner-txt .btn-custom i {
   margin-right: 20px;
 }
 
+.banner-img {
+  transition: all 2s ease;
+}
+
+@media screen and (max-width: 1199px) {
+  #banner-section {
+    padding-bottom: 160px;
+  }
+}
 @media screen and (max-width: 991px) {
   #banner-section {
     padding: 50px 0 150px;
@@ -309,9 +379,12 @@ header .nav-item a:hover {
   }
 }
 @media screen and (max-width: 767px) {
+  #banner-section {
+    padding-bottom: 130px;
+  }
   #banner-section .banner-txt h1 {
-    font-size: 45px;
-    line-height: 60px;
+    font-size: 35px;
+    line-height: 50px;
   }
   #banner-section .banner-txt span {
     font-size: 18px;
@@ -340,7 +413,7 @@ header .nav-item a:hover {
     margin-bottom: 40px;
   }
   #banner-section .banner-txt {
-    margin-left: 20px;
+    margin-left: 10px;
   }
   #banner-section .banner-txt h1 {
     font-size: 40px;
@@ -367,29 +440,35 @@ header .nav-item a:hover {
 /*------------------!--------------------ABOUT SECTION STYLES------------------------!--------------*/
 #about-section {
   padding: 60px 0;
+  overflow: hidden;
 }
-#about-section .about-txt p {
+
+.about-txt {
+  transition-delay: 8s;
+}
+.about-txt p {
   font-family: "Nunito", sans-serif;
   margin-bottom: 50px;
 }
-#about-section .about-btns .btn-custom {
+
+.about-btns .btn-custom {
   margin-right: 25px;
 }
-#about-section .about-btns .btn-custom:last-of-type {
+.about-btns .btn-custom:last-of-type {
   margin-right: 0;
 }
 
 @media screen and (max-width: 1199px) {
-  #about-section .about-txt h2 {
+  .about-txt h2 {
     line-height: 50px;
   }
 }
 @media screen and (max-width: 991px) {
-  #about-section .about-txt h2 {
+  .about-txt h2 {
     font-size: 35px;
     line-height: 45px;
   }
-  #about-section .about-txt p {
+  .about-txt p {
     margin-bottom: 25px;
   }
 }
@@ -397,31 +476,31 @@ header .nav-item a:hover {
   #about-section {
     padding: 30px 0;
   }
-  #about-section .about-img {
+  .about-img {
     text-align: center;
   }
-  #about-section .about-img img {
+  .about-img img {
     margin-bottom: 30px;
     width: 80%;
   }
-  #about-section .about-txt h2 {
+  .about-txt h2 {
     font-size: 30px;
     line-height: 40px;
   }
-  #about-section .about-txt p {
+  .about-txt p {
     margin-bottom: 25px;
   }
-  #about-section .about-txt .btn-custom {
+  .about-txt .btn-custom {
     font-size: 16px;
     padding: 0 25px;
   }
 }
 @media screen and (max-width: 479px) {
-  #about-section .about-txt h2 {
+  .about-txt h2 {
     font-size: 25px;
     line-height: 35px;
   }
-  #about-section .about-btns .btn-custom {
+  .about-btns .btn-custom {
     font-size: 14px;
     padding: 0 15px;
     height: 40px;
@@ -432,6 +511,7 @@ header .nav-item a:hover {
 /*------------------!--------------------SERVICE SECTION STYLES------------------------!--------------*/
 #service-section {
   padding: 60px 0;
+  overflow: hidden;
 }
 #service-section .section-heading {
   width: 600px;
@@ -565,6 +645,7 @@ header .nav-item a:hover {
 /*------------------!--------------------SKILL SECTION STYLES------------------------!--------------*/
 #skill-section {
   padding: 60px 0;
+  overflow: hidden;
 }
 #skill-section .section-heading {
   text-align: center;
@@ -602,10 +683,10 @@ header .nav-item a:hover {
   color: black;
   font-family: "Nunito", sans-serif;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 900;
 }
 #skill-section #web-progress {
-  animation: web-progress 4s forwards;
+  animation: web-progress 2s forwards;
 }
 @keyframes web-progress {
   0% {
@@ -616,7 +697,7 @@ header .nav-item a:hover {
   }
 }
 #skill-section #ui-progress {
-  animation: ui-progress 4s forwards;
+  animation: ui-progress 2s forwards;
 }
 @keyframes ui-progress {
   0% {
@@ -627,7 +708,7 @@ header .nav-item a:hover {
   }
 }
 #skill-section #graphics-progress {
-  animation: graphics-progress 4s forwards;
+  animation: graphics-progress 2s forwards;
 }
 @keyframes graphics-progress {
   0% {
@@ -638,7 +719,7 @@ header .nav-item a:hover {
   }
 }
 #skill-section #marketing-progress {
-  animation: marketing-progress 4s forwards;
+  animation: marketing-progress 2s forwards;
 }
 @keyframes marketing-progress {
   0% {
@@ -649,7 +730,7 @@ header .nav-item a:hover {
   }
 }
 #skill-section #development-progress {
-  animation: development-progress 4s forwards;
+  animation: development-progress 2s forwards;
 }
 @keyframes development-progress {
   0% {
@@ -660,7 +741,7 @@ header .nav-item a:hover {
   }
 }
 #skill-section #logo-progress {
-  animation: logo-progress 4s forwards;
+  animation: logo-progress 2s forwards;
 }
 @keyframes logo-progress {
   0% {
@@ -712,6 +793,7 @@ header .nav-item a:hover {
 /*------------------!--------------------EXPERIENCE SECTION STYLES------------------------!--------------*/
 #experience-section {
   padding: 60px 0;
+  overflow: hidden;
 }
 #experience-section .section-heading {
   text-align: center;
@@ -894,7 +976,8 @@ header .nav-item a:hover {
 }
 /*------------------!--------------------PORTFOLIO SECTION STYLES------------------------!--------------*/
 #portfolio-section {
-  padding: 60px 0 30px;
+  padding: 60px 0;
+  overflow: hidden;
 }
 #portfolio-section .section-heading {
   text-align: center;
@@ -1105,6 +1188,10 @@ header .nav-item a:hover {
 /*------------------!--------------------CONTACT SECTION STYLES------------------------!--------------*/
 #contact-section {
   padding: 60px 0 120px;
+  overflow: hidden;
+}
+#contact-section .container {
+  overflow: hidden;
 }
 #contact-section .section-heading {
   text-align: center;
@@ -1141,18 +1228,17 @@ header .nav-item a:hover {
   font-family: "Nunito", sans-serif;
   font-weight: 600;
 }
+#contact-section .contact-form .name-mail-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 27px;
+}
 #contact-section .contact-form input {
   border: 0;
   background-color: #f8f8f8;
   padding: 25px 30px;
   border-radius: 5px;
   font-family: "Nunito", sans-serif;
-}
-#contact-section .contact-form input#name, #contact-section .contact-form input#email {
-  width: 412px;
-}
-#contact-section .contact-form input#name {
-  margin-right: 27px;
 }
 #contact-section .contact-form input#subject {
   width: 100%;
@@ -1172,20 +1258,12 @@ header .nav-item a:hover {
   border: 0;
 }
 
-@media screen and (max-width: 1399px) {
-  #contact-section .contact-form input#name, #contact-section .contact-form input#email {
-    width: 352px;
-  }
-}
 @media screen and (max-width: 1199px) {
+  #contact-section .contact-form .name-mail-container {
+    gap: 15px;
+  }
   #contact-section .contact-form input {
     padding: 15px;
-  }
-  #contact-section .contact-form input#name, #contact-section .contact-form input#email {
-    width: 298px;
-  }
-  #contact-section .contact-form input#name {
-    margin-right: 15px;
   }
   #contact-section .contact-form textarea {
     padding: 15px;
@@ -1195,9 +1273,6 @@ header .nav-item a:hover {
   #contact-section .section-heading h2 {
     font-size: 35px;
     line-height: 45px;
-  }
-  #contact-section .contact-form input#name, #contact-section .contact-form input#email {
-    width: 338px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1211,12 +1286,13 @@ header .nav-item a:hover {
     font-size: 30px;
     line-height: 40px;
   }
+  #contact-section .contact-form .name-mail-container {
+    grid-template-columns: 2fr;
+    gap: 0;
+  }
   #contact-section .contact-form input#name, #contact-section .contact-form input#email {
     margin-bottom: 20px;
     width: 100%;
-  }
-  #contact-section .contact-form input#name {
-    margin-right: 0;
   }
   #contact-section .contact-form input#subject {
     margin-top: 0;
@@ -1276,6 +1352,7 @@ footer {
   padding: 100px 0;
   background-image: linear-gradient(to right, #2f1ece, #5685e7);
   text-align: center;
+  position: relative;
 }
 footer .socials {
   margin-bottom: 36px;
@@ -1290,6 +1367,26 @@ footer .socials i {
 footer .copyright {
   color: #fff;
   font-family: "Nunito", sans-serif;
+}
+footer .back__to__top--footer {
+  border-radius: 4px;
+  background: #fff;
+  color: #2605c8;
+  height: 65px;
+  width: 55px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.18);
+  font-size: 20px;
+  line-height: 70px;
+  position: absolute;
+  top: -33px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+footer .back__to__top--footer:hover {
+  background-color: #2605c8;
+  color: #fff;
 }
 
 @media screen and (max-width: 991px) {

@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="assets/css/style.css" />
     </head>
     <body>
-        <header>
+        <header id="header" class="">
             <div class="container">
                 <div class="row align-items-center">
                     <!-- LOGO AND COLLAPSE BUTTON  -->
@@ -82,7 +82,7 @@
                         <div class="col-sm-6 order-sm-1 order-2">
                             <div class="banner-txt">
                                 <span class="banner-subtitle">hello, i'm</span>
-                                <h1>abu amer</h1>
+                                <h1>Angela Kwang</h1>
                                 <span class="profession">UI/UX Designer and Web Developer</span>
                                 <a href="#" class="btn-custom"><i class="fa-solid fa-envelope"></i>Contact Me</a>
                             </div>
@@ -180,8 +180,8 @@
                             <div class="single-skill">
                                 <h3>Web Design</h3>
                                 <div class="custom-progress-bar">
-                                    <div id="web-progress" class="custom-progress">
-                                        <div id="web-percentage" class="percentage"></div>
+                                    <div class="custom-progress">
+                                        <div id="web" class="percentage"></div>
                                     </div>
                                 </div>
                             </div>
@@ -191,8 +191,8 @@
                             <div class="single-skill">
                                 <h3>UI / UX Design</h3>
                                 <div class="custom-progress-bar">
-                                    <div id="ui-progress" class="custom-progress">
-                                        <div id="ui-percentage" class="percentage"></div>
+                                    <div class="custom-progress">
+                                        <div id="ui" class="percentage"></div>
                                     </div>
                                 </div>
                             </div>
@@ -202,8 +202,8 @@
                             <div class="single-skill">
                                 <h3>Graphichs Design</h3>
                                 <div class="custom-progress-bar">
-                                    <div id="graphics-progress" class="custom-progress">
-                                        <div id="graphics-percentage" class="percentage"></div>
+                                    <div class="custom-progress">
+                                        <div id="graphics" class="percentage"></div>
                                     </div>
                                 </div>
                             </div>
@@ -213,8 +213,8 @@
                             <div class="single-skill">
                                 <h3>Marketing</h3>
                                 <div class="custom-progress-bar">
-                                    <div id="marketing-progress" class="custom-progress">
-                                        <div id="marketing-percentage" class="percentage"></div>
+                                    <div class="custom-progress">
+                                        <div id="marketing" class="percentage"></div>
                                     </div>
                                 </div>
                             </div>
@@ -224,8 +224,8 @@
                             <div class="single-skill">
                                 <h3>Development</h3>
                                 <div class="custom-progress-bar">
-                                    <div id="development-progress" class="custom-progress">
-                                        <div id="development-percentage" class="percentage"></div>
+                                    <div class="custom-progress">
+                                        <div id="development" class="percentage"></div>
                                     </div>
                                 </div>
                             </div>
@@ -235,8 +235,8 @@
                             <div class="single-skill">
                                 <h3>Logo Design</h3>
                                 <div class="custom-progress-bar">
-                                    <div id="logo-progress" class="custom-progress">
-                                        <div id="logo-percentage" class="percentage"></div>
+                                    <div class="custom-progress">
+                                        <div id="logo" class="percentage"></div>
                                     </div>
                                 </div>
                             </div>
@@ -470,8 +470,10 @@
                         <div class="col-lg-8">
                             <div class="contact-form">
                                 <form action="#">
-                                    <input type="text" name="name" id="name" placeholder="Name" class="col-lg-6" />
-                                    <input type="email" name="email" id="email" placeholder="Email" class="col-lg-6" />
+                                    <div class="name-mail-container">
+                                        <input type="text" name="name" id="name" placeholder="Name" />
+                                        <input type="email" name="email" id="email" placeholder="Email" />
+                                    </div>
                                     <input type="text" name="subject" id="subject" placeholder="Subject" />
 
                                     <textarea name="message" id="message" rows="10" placeholder="Message"></textarea>
@@ -488,6 +490,7 @@
 
         <footer>
             <div class="container">
+                <div class="back__to__top--footer" onclick="backToTop()"><i class="fa-regular fa-arrow-up-long"></i></div>
                 <div class="socials">
                     <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
                     <a href="#"><i class="fa-brands fa-twitter"></i></a>
@@ -498,19 +501,24 @@
             </div>
         </footer>
 
+        <div class="back__to__top" onclick="backToTop()"><i class="fa-solid fa-arrow-up-long"></i></div>
+
         <!-- jquery JS -->
-        <script src="assets/vendor/js/jquery.min.js"></script>
+        <!-- <script src="assets/vendor/js/jquery.min.js"></script> -->
 
         <!-- BOOTSTRAP JS  -->
         <script src="assets/vendor/js/bootstrap.min.js"></script>
 
-        <!-- JS -->
+        <!--TINY SLIDER JS -->
         <script src="assets/vendor/js/tiny-slider.js"></script>
 
         <!-- JS -->
-        <script src=""></script>
+        <!-- <script src="assets/js/my-scroll-animation.js"></script> -->
+
+        <!-- JS -->
+        <script src="assets/js/scrollToAnimate.js"></script>
 
         <!-- CUSTOM JS -->
-        <script src="assets/js/main.js"></script>
+        <script src="assets/js/main.js" defer></script>
     </body>
 </html>

@@ -1,6 +1,7 @@
 /*------------------!--------------------SKILL SECTION STYLES------------------------!--------------*/
 #skill-section {
     padding: 60px 0;
+    overflow: hidden;
 
     .section-heading {
         text-align: center;
@@ -42,12 +43,12 @@
             color: black;
             font-family: "Nunito", sans-serif;
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 900;
         }
     }
 
     @mixin progress-animation($animation-name, $end-point) {
-        animation: #{$animation-name} 4s forwards;
+        animation: #{$animation-name} 2s forwards;
 
         @keyframes #{$animation-name} {
             0% {

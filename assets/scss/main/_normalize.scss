@@ -1,6 +1,15 @@
 html {
     overflow-x: hidden;
     scroll-behavior: smooth;
+    scroll-padding-top: 87px;
+
+    @include md {
+        scroll-padding-top: 50px;
+    }
+
+    @include xs {
+        scroll-padding-top: 55px;
+    }
 }
 
 body {

@@ -89,3 +89,37 @@ a:visited {
 .section-heading p {
     font-family: $font-2;
 }
+
+.back__to__top {
+    color: $white;
+    background-color: $main-color;
+    height: 65px;
+    width: 55px;
+    box-shadow: 0 0 20px rgb(0 0 0 / 18%);
+    font-size: 20px;
+    line-height: 70px;
+    text-align: center;
+    bottom: 15px;
+    right: 20px;
+    border-radius: 4px;
+    position: fixed;
+    cursor: pointer;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.2s ease;
+    z-index: 111;
+
+    &:hover {
+        background-color: $white;
+        color: $main-color;
+    }
+}
+
+.back__to__top.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.back__to__top.active__override {
+    opacity: 0;
+}

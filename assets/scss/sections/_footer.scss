@@ -3,6 +3,7 @@ footer {
     padding: 100px 0;
     @include gradient-x;
     text-align: center;
+    position: relative;
 
     .socials {
         margin-bottom: 36px;
@@ -17,6 +18,28 @@ footer {
     .copyright {
         color: $white;
         font-family: $font-2;
+    }
+
+    .back__to__top--footer {
+        border-radius: 4px;
+        background: $white;
+        color: $main-color;
+        height: 65px;
+        width: 55px;
+        box-shadow: 0 0 20px rgb(0 0 0 / 18%);
+        font-size: 20px;
+        line-height: 70px;
+        position: absolute;
+        top: -33px;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
+        transition: all 0.4s ease;
+
+        &:hover {
+            background-color: $main-color;
+            color: $white;
+        }
     }
 }
 
@@ -56,3 +79,9 @@ footer {
         }
     }
 }
+
+// .show {
+//     opacity: 1;
+//     transition: all 1s ease;
+//     transform: translateX(0%);
+// }

@@ -1,6 +1,11 @@
 /*------------------!--------------------CONTACT SECTION STYLES------------------------!--------------*/
 #contact-section {
     padding: 60px 0 120px;
+    overflow: hidden;
+
+    .container {
+        overflow: hidden;
+    }
 
     .section-heading {
         text-align: center;
@@ -46,21 +51,17 @@
     }
 
     .contact-form {
+        .name-mail-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 27px;
+        }
         input {
             border: 0;
             background-color: #f8f8f8;
             padding: 25px 30px;
             border-radius: 5px;
             font-family: $font-2;
-
-            &#name,
-            &#email {
-                width: 412px;
-            }
-
-            &#name {
-                margin-right: 27px;
-            }
 
             &#subject {
                 width: 100%;
@@ -88,12 +89,6 @@
 @include xl {
     #contact-section {
         .contact-form {
-            input {
-                &#name,
-                &#email {
-                    width: 352px;
-                }
-            }
         }
     }
 }
@@ -101,16 +96,11 @@
 @include lg {
     #contact-section {
         .contact-form {
+            .name-mail-container {
+                gap: 15px;
+            }
             input {
                 padding: 15px;
-                &#name,
-                &#email {
-                    width: 298px;
-                }
-
-                &#name {
-                    margin-right: 15px;
-                }
             }
 
             textarea {
@@ -130,12 +120,6 @@
         }
 
         .contact-form {
-            input {
-                &#name,
-                &#email {
-                    width: 338px;
-                }
-            }
         }
     }
 }
@@ -154,15 +138,15 @@
         }
 
         .contact-form {
+            .name-mail-container {
+                grid-template-columns: 2fr;
+                gap: 0;
+            }
             input {
                 &#name,
                 &#email {
                     margin-bottom: 20px;
                     width: 100%;
-                }
-
-                &#name {
-                    margin-right: 0;
                 }
 
                 &#subject {

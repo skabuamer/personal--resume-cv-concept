@@ -1,44 +1,50 @@
 /*------------------!--------------------BANNER STYLES------------------------!--------------*/
 #banner-section {
-    background: url(../img/bg/banner-bg.png) no-repeat bottom center;
+    background: url(../img/bg/banner-bg.png) no-repeat;
+    background-position: bottom right;
     background-size: cover;
     padding: 70px 0 230px;
+    position: relative;
+    overflow: hidden;
+}
 
-    .banner-txt {
+.banner-txt {
+    color: $white;
+
+    h1 {
+        text-transform: capitalize;
         color: $white;
+        margin-bottom: 0;
+    }
 
-        h1 {
-            text-transform: capitalize;
-            color: $white;
-            margin-bottom: 0;
+    span {
+        display: block;
+        text-transform: capitalize;
+        font-family: $font-2;
+        font-weight: 600;
+        font-size: 25px;
+
+        &.banner-subtitle {
+            margin-bottom: 23px;
         }
 
-        span {
-            display: block;
-            text-transform: capitalize;
-            font-family: $font-2;
-            font-weight: 600;
-            font-size: 25px;
-
-            &.banner-subtitle {
-                margin-bottom: 23px;
-            }
-
-            &.profession {
-                margin-top: 5px;
-                margin-bottom: 40px;
-            }
-        }
-
-        .btn-custom {
-            background: $white;
-            color: $black;
-
-            i {
-                margin-right: 20px;
-            }
+        &.profession {
+            margin-top: 5px;
+            margin-bottom: 40px;
         }
     }
+
+    .btn-custom {
+        background: $white;
+        color: $black;
+        i {
+            margin-right: 20px;
+        }
+    }
+}
+
+.banner-img {
+    transition: all 2s ease;
 }
 
 @include xl {
@@ -48,6 +54,7 @@
 
 @include lg {
     #banner-section {
+        padding-bottom: 160px;
     }
 }
 
@@ -73,10 +80,11 @@
 
 @include sm {
     #banner-section {
+        padding-bottom: 130px;
         .banner-txt {
             h1 {
-                font-size: 45px;
-                line-height: 60px;
+                font-size: 35px;
+                line-height: 50px;
             }
 
             span {
@@ -113,7 +121,7 @@
         }
 
         .banner-txt {
-            margin-left: 20px;
+            margin-left: 10px;
 
             h1 {
                 font-size: 40px;
