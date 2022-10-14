@@ -1,3 +1,12 @@
+// $(window).on("load", function () {
+//     $(".preloader").fadeOut(1000);
+// });
+
+const loader = document.querySelector(".preloader");
+window.addEventListener("load", () => {
+    loader.style.display = "none";
+});
+
 // Sticky Header
 window.addEventListener("scroll", () => {
     document.querySelector("header").classList.toggle("sticky", window.scrollY >= 100);
@@ -11,52 +20,68 @@ window.addEventListener("scroll", () => {
     }
 }); */
 
-// skill percentage load And animation JS
 let i = 0;
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            // Adding ID for css animation
-            entry.target.setAttribute("id", `${entry.target.children[0].id}` + "-progress");
+//Percentage Increasing function
+const show_percentage = (skill, percentage, delay) => {
+    i++;
+    console.log(i);
+    if (i <= 6) {
+        let counter = 0;
+        setInterval(() => {
+            if (counter == percentage) {
+                clearInterval();
+            } else {
+                counter += 1;
+                skill.innerHTML = counter + "%";
+            }
+        }, delay);
+    } else {
+        return;
+    }
+};
 
-            // Making sure function gets called only once
-            i++;
-            if (i == 1) {
-                let web_percentage = document.getElementById("web");
-                let ui_percentage = document.getElementById("ui");
-                let graphics_percentage = document.getElementById("graphics");
-                let marketing_percentage = document.getElementById("marketing");
-                let development_percentage = document.getElementById("development");
-                let logo_percentage = document.getElementById("logo");
+// skill percentage load And animation JS
+const observeOptions = {
+    rootMargin: "0px 0px -10px 0px",
+    trackVisibility: true,
+    delay: 100,
+};
 
-                //Percentage Increasing function
-                const show_percentage = (skill, percentage, delay) => {
-                    let counter = 0;
-                    setInterval(() => {
-                        if (counter == percentage) {
-                            clearInterval();
-                        } else {
-                            counter += 1;
-                            skill.innerHTML = counter + "%";
-                        }
-                    }, delay);
-                };
+const observerFunction = (progressBar, percentage, duration) => {
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            console.log(entry.target);
+            if (entry.isIntersecting) {
+                // Adding ID for css animation
+                entry.target.parentElement.setAttribute("id", `${entry.target.id}` + "-progress");
 
                 // Percentage showing with
-                show_percentage(web_percentage, 80, 20);
-                show_percentage(ui_percentage, 95, 15);
-                show_percentage(graphics_percentage, 83, 20);
-                show_percentage(marketing_percentage, 80, 20);
-                show_percentage(development_percentage, 90, 20);
-                show_percentage(logo_percentage, 87, 20);
+                show_percentage(entry.target, percentage, duration);
             }
-        }
-    });
-});
-const progressBars = document.getElementsByClassName("custom-progress");
-Array.from(progressBars).forEach((progressBar) => {
+            observer.unobserve;
+        });
+    }, observeOptions);
+
     observer.observe(progressBar);
-});
+};
+
+const web_bar = document.getElementById("web");
+observerFunction(web_bar, 80, 20);
+
+const ui_bar = document.getElementById("ui");
+observerFunction(ui_bar, 95, 15);
+
+const graphics_bar = document.getElementById("graphics");
+observerFunction(graphics_bar, 83, 20);
+
+const marketing_bar = document.getElementById("marketing");
+observerFunction(marketing_bar, 80, 20);
+
+const development_bar = document.getElementById("development");
+observerFunction(development_bar, 90, 20);
+
+const logo_bar = document.getElementById("logo");
+observerFunction(logo_bar, 87, 20);
 
 // TESTIMONIAL SLIDER JS
 var slider = tns({
@@ -101,15 +126,15 @@ scrollToAnimate("#service-section .section-heading", "translateX", "-100%", "0%"
 scrollToAnimate(".single-service", "translateY", "70%", "0%", "transform 1s ease");
 
 // experience animation
-scrollToAnimate(".single-experience.row", "translateY", "30%", "0%", "transform 1s ease");
+// scrollToAnimate(".single-experience.row", "translateY", "30%", "0%", "transform 1s ease");
 
 // portfolio animation
-scrollToAnimate(".portfolio-img-container", "translateY", "30%", "0%", "transform 1s ease");
+// scrollToAnimate(".portfolio-img-container", "translateY", "30%", "0%", "transform 1s ease");
 
-// comntact animation
+// contact animation
 scrollToAnimate(".single-contact-info:first-child", "translateX", "-30%", "0%", "transform 1s ease ");
-scrollToAnimate(".single-contact-info:nth-child(2)", "translateX", "-30%", "0%", "transform 1s ease .6s");
-scrollToAnimate(".single-contact-info:last-child", "translateX", "-30%", "0%", "transform 1s ease .9s");
+scrollToAnimate(".single-contact-info:nth-child(2)", "translateX", "-100%", "0%", "transform 1s ease .1s");
+scrollToAnimate(".single-contact-info:last-child", "translateX", "-100%", "0%", "transform 1s ease .3s");
 
 // back to top
 const backToTop = () => {
@@ -132,7 +157,6 @@ const footerObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (!entry.isIntersecting) {
             document.querySelector(".back__to__top").classList.remove("active__override");
-            console.log(entry.isIntersecting);
             return;
         } else {
             document.querySelector(".back__to__top").classList.add("active__override");

@@ -47,11 +47,6 @@
     transition: all 2s ease;
 }
 
-@include xl {
-    #banner-section {
-    }
-}
-
 @include lg {
     #banner-section {
         padding-bottom: 160px;
